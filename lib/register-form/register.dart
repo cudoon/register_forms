@@ -386,7 +386,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           ),
                         ),
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             SizedBox(width: 10),
                             _isLoading
@@ -425,17 +425,21 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     ],
                                   ),
                                 )),
-                            SizedBox(width: 200),
+                            SizedBox(width: 20),
+                            Container(
+
+                                child: GestureDetector(
+                                  child: Text('i already have an account!! ', style: TextStyle(
+                                      color: Colors.blue,
+                                      fontSize: 22
+                                  ),),
+                                  onTap: ()=> Navigator.push(context, MaterialPageRoute(builder: (_) => LoginScreen())),
+                                )
+                            )
+
 
                           ],
                         ),
-                        Container(
-
-                          child: GestureDetector(
-                            child: Text('already login here'),
-                            onTap: ()=> Navigator.push(context, MaterialPageRoute(builder: (_) => LoginScreen())),
-                          )
-                        )
                       ],
                     ))
               ],
@@ -446,3 +450,4 @@ class _SignUpScreenState extends State<SignUpScreen> {
     );
   }
 }
+
