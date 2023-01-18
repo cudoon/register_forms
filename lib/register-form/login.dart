@@ -3,6 +3,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_challenges2022/register-form/register.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 
@@ -169,7 +170,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     //   ),
                     // ),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         SizedBox(width: 10),
                         _isLoading
@@ -207,7 +208,19 @@ class _LoginScreenState extends State<LoginScreen> {
                               ],
                             )),
                         SizedBox(width: 20),
+                        Container(
+
+                            child: GestureDetector(
+                                child: Text('SIGN-UP HERE', style: TextStyle(
+                                  color: Colors.blue,
+                                  fontSize: 22
+                              ),),
+                              onTap: ()=> Navigator.push(context, MaterialPageRoute(builder: (_) => SignUpScreen())),
+                            )
+                        )
+
                       ],
+
                     ),
                   ],
                 ))
